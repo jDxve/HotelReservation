@@ -12,10 +12,57 @@ namespace HotelReservation
 {
     public partial class Dashboard : Form
     {
+        private string username;
+
         public Dashboard()
         {
             InitializeComponent();
             this.FormClosing += Dashboard_FormClosing; // Add form closing event handler
+        }
+
+        // Optional: Constructor that accepts username for personalized welcome
+        public Dashboard(string username)
+        {
+            InitializeComponent();
+            this.username = username;
+            this.FormClosing += Dashboard_FormClosing;
+
+            // Set welcome message if username is provided
+            if (!string.IsNullOrEmpty(username))
+            {
+                lblWelcome.Text = $"Welcome, {username}";
+            }
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            // Initialization code when dashboard loads
+            SetButtonHoverEffects();
+        }
+
+        // Add hover effects to all menu buttons
+        private void SetButtonHoverEffects()
+        {
+            foreach (Control c in menuPanel.Controls)
+            {
+                if (c is Button btn && btn != btnLogout)
+                {
+                    // Original color is stored in the Tag property
+                    btn.Tag = btn.BackColor;
+
+                    // Mouse enter - lighten the button
+                    btn.MouseEnter += (s, args) => {
+                        Button b = (Button)s;
+                        b.BackColor = ControlPaint.Light((Color)b.Tag, 0.2f);
+                    };
+
+                    // Mouse leave - restore original color
+                    btn.MouseLeave += (s, args) => {
+                        Button b = (Button)s;
+                        b.BackColor = (Color)b.Tag;
+                    };
+                }
+            }
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -35,7 +82,7 @@ namespace HotelReservation
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenForm(new Reserations());
+            OpenForm(new MakeReservation());
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -66,19 +113,35 @@ namespace HotelReservation
             form.Show();
         }
 
-        // Add this method and button for logging out
+        // Updated logout method
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Login loginForm = new Login();
-            this.Hide();
-            loginForm.Show();
+            // Confirm before logout
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirm Logout",
+                                                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Login loginForm = new Login();
+                this.Hide();
+                loginForm.Show();
+            }
         }
 
+        // Keep compatibility with previous button8_Click
         private void button8_Click(object sender, EventArgs e)
         {
-            Login loginForm = new Login();
-            this.Hide();
-            loginForm.Show();
+            btnLogout_Click(sender, e);
+        }
+
+        private void menuPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void headerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
