@@ -128,35 +128,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="PasswordReset.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PasswordReset.Designer.cs">
       <DependentUpon>PasswordReset.cs</DependentUpon>
     </Compile>
-    <Compile Include="Guests.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Guests.Designer.cs">
-      <DependentUpon>Guests.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Payments.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Payments.Designer.cs">
-      <DependentUpon>Payments.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -166,44 +148,11 @@
     <Compile Include="MakeReservation.Designer.cs">
       <DependentUpon>MakeReservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reviews.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reviews.Designer.cs">
-      <DependentUpon>Reviews.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Room Types.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Room Types.Designer.cs">
-      <DependentUpon>Room Types.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RoomBookingLogs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RoomBookingLogs.Designer.cs">
-      <DependentUpon>RoomBookingLogs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Rooms.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rooms.Designer.cs">
-      <DependentUpon>Rooms.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PasswordReset.resx">
       <DependentUpon>PasswordReset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Guests.resx">
-      <DependentUpon>Guests.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Payments.resx">
-      <DependentUpon>Payments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -217,18 +166,6 @@
     </Compile>
     <EmbeddedResource Include="MakeReservation.resx">
       <DependentUpon>MakeReservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reviews.resx">
-      <DependentUpon>Reviews.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Room Types.resx">
-      <DependentUpon>Room Types.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RoomBookingLogs.resx">
-      <DependentUpon>RoomBookingLogs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Rooms.resx">
-      <DependentUpon>Rooms.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
