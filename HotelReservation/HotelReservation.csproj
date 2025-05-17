@@ -190,5 +190,8 @@
   <ItemGroup>
     <None Include="Resources\hotels1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="HotelReservationDB.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
