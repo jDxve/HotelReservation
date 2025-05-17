@@ -12,7 +12,7 @@ namespace HotelReservation
         private string connectionString = "Server=localhost;Database=hotel_reservation;Uid=root;Pwd=root;";
 
         // Track the current state of the form
-        private enum ResetState
+         private enum ResetState
         {
             EnterPin,
             EnterNewPassword
